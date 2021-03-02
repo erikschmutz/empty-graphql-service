@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "alwaysStrict": true,
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@server/*": ["src/server/*"],
+      "@utils/*": ["src/utils/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@models/*": ["src/models/*"],
+      "@assets/*": ["src/assets/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "src/*": ["src/*"]
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "types": ["node", "jest", "reflect-metadata"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/**/*.spec.ts"]
+}
