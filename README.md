@@ -65,7 +65,7 @@ This project uses a _.env_ file which should be located at the project root (i. 
 
 - `npm run migrate:run`- Runs all the migrations in the migration folder and hence sets up the connected database. [Click here for more information](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md#running-and-reverting-migrations).
 
-- `npm run migrate:generate`- Generates all the changes from the ORM model. [Click here for more information](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md#generating-migrations).
+- `npm run migrate:generate -- -n {{migration name}}`- Generates all the changes from the ORM model. [Click here for more information](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md#generating-migrations).
 
 - `npm run migrate:create` - Creates an empty migration. Needs to get an --name(-n) argument. [Click here for more information](https://github.com/typeorm/typeorm/blob/master/docs/migrations.md#creating-a-new-migration).
 
