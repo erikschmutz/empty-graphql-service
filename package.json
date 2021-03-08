@@ -23,7 +23,7 @@
     "docker:dev": "node scripts/docker:dev.js",
     "docker:reset": "node scripts/docker:reset.js",
     "test": "jest --detectOpenHandles --forceExit",
-    "test:integration": "INTER=TRUE jest --detectOpenHandles --forceExit",
+    "test:integration": "node scripts/test:integration.js",
     "test:lint": "eslint './src/**/*.{ts,tsx}' --max-warnings 0",
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
     "git:pre-push": "npm run test && npm run test:lint"
