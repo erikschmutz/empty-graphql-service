@@ -28,7 +28,7 @@ NodeJS is a JavaScript runtime to be able to execute JavaScript. To install Node
 
 ### This project
 
-This project uses TypeScript which is compiled to JavaScript. TypeScript is a superset of JavaScript it is installed on project level.
+This project uses TypeScript which is compiled to JavaScript. TypeScript is a superset of JavaScript it is installed on project level. Therefore you do not need to think about it too much. Just from the project directory do the following
 
 - **Install**, install all dependencies by running, `npm run install`
 - **Env**, copy over .env.example => .env.
@@ -37,17 +37,26 @@ This project uses TypeScript which is compiled to JavaScript. TypeScript is a su
 
 (for a more in depth description fo the scripts, please read in the **Scripts** section).
 
+<!---
 ```mermaid
 graph LR
 A[src-folder] --> N((NodeJS))
-N((NodeJS)) -- production --> B[dist-folder]
-N((NodeJS)) -- development --> R[no out dir]
+
+N -- production -->G[gulp]
+G -- asserts structure, other fixes --> B[dist-folder]
+N -- development --> R[no out dir]
 D[Docker] -- docker-compose --> N
+
 ```
+--->
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgICBBW3NyYy1mb2xkZXJdIC0tPiBOKChOb2RlSlMpKVxuICAgIE4gLS0gcHJvZHVjdGlvbiAtLT5HW2d1bHBdXG4gICAgRyAtLSBhc3NlcnRzIHN0cnVjdHVyZSwgb3RoZXIgZml4ZXMgIC0tPiBCW2Rpc3QtZm9sZGVyXVxuICAgIE4gLS0gZGV2ZWxvcG1lbnQgLS0-IFJbbm8gb3V0IGRpcl1cbiAgICBEW0RvY2tlcl0gLS0gZG9ja2VyLWNvbXBvc2UgLS0-IE4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgICBBW3NyYy1mb2xkZXJdIC0tPiBOKChOb2RlSlMpKVxuICAgIE4gLS0gcHJvZHVjdGlvbiAtLT5HW2d1bHBdXG4gICAgRyAtLSBhc3NlcnRzIHN0cnVjdHVyZSwgb3RoZXIgZml4ZXMgIC0tPiBCW2Rpc3QtZm9sZGVyXVxuICAgIE4gLS0gZGV2ZWxvcG1lbnQgLS0-IFJbbm8gb3V0IGRpcl1cbiAgICBEW0RvY2tlcl0gLS0gZG9ja2VyLWNvbXBvc2UgLS0-IE4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+
+
 
 ## Enviroment
 
-This project uses a _.env_ file which should be located at the project root (i. e. next to the src/ folder). If you look at the _.env.example_ you should be able to see all the varbiles which are required. Certain env variables are sat up in the container for ease of use and therefore are not required in the _.env_ file
+This project uses a *.env* file which should be located at the project root (i. e. next to the src/ folder). If you look at the *.env.example* you should be able to see all the varbiles which are required. Certain env variables are sat up in the container for ease of use and therefore are not required in the *.env* file
 
 ## Scripts
 
@@ -55,7 +64,7 @@ This project uses a _.env_ file which should be located at the project root (i. 
 
 - `npm run start:dev`- Starts application for development. Refreshes the server when any changes is made.
 
-- `npm run build`- Compiles and build the application. Produces a dist folder which can be run directly by NodeJS without TypeScript.
+- `npm run build`- Compiles and build the application. Produces a dist folder which can be run directly by NodeJS without TypeScript. It uses **gulp** to add html files and assert that the structure is correct.
 
 - `npm run migrate` - TypeOrm migration helper function mainly used by other scripts. You probably will not need to use this one!
 
@@ -79,6 +88,8 @@ This project uses a _.env_ file which should be located at the project root (i. 
 
 - - `npm run git:pre-push` - This is a helper function which can help you to always make sure that you push code that is valid. This can be made automaticly by running
 
+
 ## Testing
 
-Testing is done using jest. It has two types of tests normal (ends with _\*.test.ts_) and integration tests(ends with _\*.i.test.ts_). The normal test should be used as simple unit tests and integration test can be used to when more complex testing enviroment is required.
+ Testing is done using jest. It has two types of tests normal (ends with _\*.test.ts_) and integration tests(ends with _\*.i.test.ts_). The normal test should be used as simple unit tests and integration test can be used to when more complex testing enviroment is required.
+```
